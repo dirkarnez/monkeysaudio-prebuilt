@@ -66,12 +66,12 @@ jobs:
         uses: thedoctor0/zip-release@master
         with:
           type: 'zip'
-          directory: "monkeysaudio/cmake-build/${{ env.cmakeInstallationPath }}"
+          directory: "cmake-build/${{ env.cmakeInstallationPath }}"
           filename: "${{ env.mingwTargetZip }}"
         
       - name: Release prebuilt
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "monkeysaudio/cmake-build/${{ env.cmakeInstallationPath }}/${{ env.mingwTargetZip }}"
+          artifacts: "cmake-build/${{ env.cmakeInstallationPath }}/${{ env.mingwTargetZip }}"
           allowUpdates: true
           token: ${{ secrets.GITHUB_TOKEN }}
